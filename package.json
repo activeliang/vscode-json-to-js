@@ -1,0 +1,46 @@
+{
+    "name": "json-to-js",
+    "displayName": "json-to-js",
+    "description": "Converts JSON string into a valid JS object",
+    "version": "0.1.0",
+    "publisher": "renatorodrigues",
+    "engines": {
+        "vscode": "^1.27.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rerodrigues/vscode-json-to-js.git"
+    },
+    "author": "Renato Rodrigues <renato@renatorodrigues.com>",
+    "license": "MIT",
+    "homepage": "https://github.com/rerodrigues/vscode-json-to-js",
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.jsonToJs"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.jsonToJs",
+                "title": "JSON to JS Object"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.21",
+        "eslint": "^4.11.0",
+        "@types/node": "^8.10.25",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "javascript-stringify": "^1.6.0"
+    }
+}
