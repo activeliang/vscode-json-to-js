@@ -32,7 +32,7 @@
     ],
     "galleryBanner": {
         "color": "#F6DC18",
-        "theme": "dark"
+        "theme": "light"
     },
     "activationEvents": [
         "onCommand:extension.jsonToJs"
