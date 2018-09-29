@@ -1,22 +1,39 @@
 {
     "name": "json-to-js",
-    "displayName": "json-to-js",
-    "description": "Converts JSON string into a valid JS object",
+    "displayName": "JSON to JS converter",
+    "description": "Converts a JSON string into a valid JS object",
     "version": "0.1.0",
     "publisher": "renatorodrigues",
+    "icon": "icon.png",
     "engines": {
         "vscode": "^1.27.0"
+    },
+    "author": "Renato Rodrigues <renato@renatorodrigues.com>",
+    "bugs": {
+        "url": "https://github.com/rerodrigues/vscode-json-to-js/issues",
+        "email": "renato@renatorodrigues.com"
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/rerodrigues/vscode-json-to-js.git"
     },
-    "author": "Renato Rodrigues <renato@renatorodrigues.com>",
-    "license": "MIT",
     "homepage": "https://github.com/rerodrigues/vscode-json-to-js",
+    "license": "MIT",
     "categories": [
+        "Formatters",
         "Other"
     ],
+    "keywords": [
+        "json",
+        "javascript",
+        "object",
+        "json-to-js",
+        "converter"
+    ],
+    "galleryBanner": {
+        "color": "#F6DC18",
+        "theme": "dark"
+    },
     "activationEvents": [
         "onCommand:extension.jsonToJs"
     ],
@@ -25,7 +42,7 @@
         "commands": [
             {
                 "command": "extension.jsonToJs",
-                "title": "JSON to JS Object"
+                "title": "Convert JSON into JS object"
             }
         ]
     },
