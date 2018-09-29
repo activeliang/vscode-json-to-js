@@ -2,7 +2,7 @@
     "name": "json-to-js",
     "displayName": "JSON to JS converter",
     "description": "Converts a JSON string into a valid JS object",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "renatorodrigues",
     "icon": "icon.png",
     "engines": {
