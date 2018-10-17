@@ -44,6 +44,14 @@
                 "command": "extension.jsonToJs",
                 "title": "Convert JSON into JS object"
             }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.jsonToJs",
+                "key": "ctrl+shift+j",
+                "mac": "cmd+shift+j",
+                "when": "editorTextFocus && editorHasSelection && !editorReadonly"
+            }
         ]
     },
     "scripts": {
