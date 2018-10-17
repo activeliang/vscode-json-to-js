@@ -1,7 +1,8 @@
 const vscode = require('vscode');
 const javascriptStringify = require("javascript-stringify")
 
-const { window, Position, Range, Selection } = vscode;
+const { window, workspace, Position, Range, Selection } = vscode;
+const { addTrailingComma, indentationSize } = workspace.getConfiguration('json-to-js');
 
 function processSelection(editor, doc, sel, formatCB, argsCB) {
     const replaceRanges = [];
@@ -9,7 +10,7 @@ function processSelection(editor, doc, sel, formatCB, argsCB) {
         // itterate through the selections
         for (let x = 0; x < sel.length; x++) {
             try {
-                let txt = JSON.parse(doc.getText(new Range(sel[x].start, sel[x].end)));
+                let txt = doc.getText(new Range(sel[x].start, sel[x].end));
                 if (argsCB.length > 0) {
                     // in the case of figlet the params are test to change and font so this is hard coded
                     // the idea of the array of parameters is to allow for a more general approach in the future
@@ -32,15 +33,25 @@ function processSelection(editor, doc, sel, formatCB, argsCB) {
     editor.selections = replaceRanges;
 }
 
+const replacer = (value, indent, stringify) => {
+    if (addTrailingComma) {
+        if (Array.isArray(value)) return stringify(value).replace(/\n]$/g, ',\n]');
+        if (typeof value === 'object') return stringify(value).replace(/\n}$/g, ',\n}');
+    }
+    return stringify(value);
+};
+
+const format = string => javascriptStringify(JSON.parse(string), replacer, indentationSize);
+
 function activate(context) {
-    let disposable = vscode.commands.registerCommand('extension.jsonToJs', () => {
+    const disposable = vscode.commands.registerCommand('extension.jsonToJs', () => {
         const editor = window.activeTextEditor;
         const document = editor.document;
         const selection = editor.selections;
 
         if (!window.activeTextEditor || selection.every(sel => sel.isEmpty)) return;
 
-        processSelection(editor, document, selection, javascriptStringify, [null, 2]);
+        processSelection(editor, document, selection, format, [null, indentationSize]);
     });
 
     context.subscriptions.push(disposable);

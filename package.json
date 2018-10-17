@@ -52,7 +52,23 @@
                 "mac": "cmd+shift+j",
                 "when": "editorTextFocus && editorHasSelection && !editorReadonly"
             }
-        ]
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "JSON to JS converter",
+            "properties": {
+                "json-to-js.indentationSize": {
+                    "type": "number",
+                    "default": 2,
+                    "description": "Number of spaces to use in indentation."
+                },
+                "json-to-js.addTrailingComma": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Add trailing commas to object and array literals."
+                }
+            }
+        }
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
