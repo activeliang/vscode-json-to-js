@@ -1,9 +1,9 @@
 {
-    "name": "json-to-js",
-    "displayName": "JSON to JS converter",
-    "description": "Converts a JSON string into a valid JS object",
+    "name": "json-to-js-enhanced-with-menu",
+    "displayName": "json-to-js Enhanced with Menu",
+    "description": "A fork of json-to-js with added menu options.",
     "version": "0.2.0",
-    "publisher": "renatorodrigues",
+    "publisher": "activeliang",
     "icon": "icon.png",
     "engines": {
         "vscode": "^1.27.0"
@@ -68,6 +68,14 @@
                     "description": "Add trailing commas to object and array literals."
                 }
             }
+        },
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "extension.jsonToJs",
+                    "when": "editorHasSelection"
+                }
+            ]
         }
     },
     "scripts": {

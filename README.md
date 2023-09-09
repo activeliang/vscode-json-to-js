@@ -1,3 +1,11 @@
+# json-to-js Enhanced with Menu
+
+This extension is a fork of the original [json-to-js](<original_extension_link_here>) with added menu bar options for enhanced usability.
+
+## Added Features
+
+- Menu option
+
 # JSON to JS converter
 
 > Converts a JSON string into a valid JavaScript object
