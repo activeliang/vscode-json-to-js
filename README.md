@@ -1,6 +1,9 @@
 # json-to-js Enhanced with Menu
 
-This extension is a fork of the original [json-to-js](<original_extension_link_here>) with added menu bar options for enhanced usability.
+This extension is a fork of the original [json-to-js](https://github.com/rerodrigues/vscode-json-to-js) with added menu bar options for enhanced usability.
+
+![WX20230909-124346@2x](https://github.com/activeliang/vscode-json-to-js/assets/24507358/12971308-ffcd-43a0-9c2f-db0c25036226)
+
 
 ## Added Features
 
